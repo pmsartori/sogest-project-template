@@ -1,0 +1,8 @@
+name: CI (Vercel cuida do deploy)
+on:
+  pull_request: {}
+jobs:
+  note:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploy é feito pelo app oficial da Vercel/Netlify conectado a este repositório — nenhuma action de deploy é necessária aqui."

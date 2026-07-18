@@ -1,0 +1,17 @@
+name: Promote develop → test
+on:
+  push:
+    branches: [develop]
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fast-forward test
+        run: |
+          git fetch origin develop:develop
+          git checkout test
+          git merge --ff-only develop
+          git push origin test
