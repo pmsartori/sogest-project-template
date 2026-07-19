@@ -12,11 +12,11 @@ set -euo pipefail
 : "${TITLE:?defina TITLE}"
 
 echo "==> criando board '$TITLE'"
-NUM=$(gh project create --owner "$OWNER" --title "$TITLE" --format json | jq -r '.number')
+NUM=$(gh project create --owner "$OWNER" --title "$TITLE" --format json -q '.number')
 echo "    board #$NUM"
 
 STATUS_FIELD=$(gh project field-list "$NUM" --owner "$OWNER" --format json \
-  | jq -r '.fields[] | select(.name=="Status") | .id')
+  -q '.fields[] | select(.name=="Status") | .id')
 
 echo "==> configurando colunas do Status"
 gh api graphql -f query='
