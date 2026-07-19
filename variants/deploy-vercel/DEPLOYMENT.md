@@ -16,3 +16,10 @@ workflow de deploy próprio a manter.
 
 `feature/* → PR → develop → promoção → test → PR revisado → main`. A
 plataforma gera uma preview URL automática pra cada PR.
+
+## Ambientes
+
+| Env | Branch | Deploy |
+|---|---|---|
+| preview | qualquer PR | automático (Vercel/Netlify gera uma preview URL) |
+| **prod** | `main` | automático a cada push em `main` |

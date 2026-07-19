@@ -9,3 +9,9 @@ que isso for definido.
 `feature/* → PR → develop → promoção → test → PR revisado → main`. A
 promoção entre ambientes e o deploy em si são manuais até um modelo ser
 escolhido.
+
+## Ambientes
+
+| Env | Branch | Deploy |
+|---|---|---|
+| dev/test/prod | `develop`/`test`/`main` | manual — defina aqui assim que decidido |
