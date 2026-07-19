@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: [SLUG_PROJETO]-pg-local
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: localdev
+      POSTGRES_DB: [SLUG_PROJETO]
+    ports:
+      - "5432:5432"
+    volumes:
+      - [SLUG_PROJETO]_pg_data:/var/lib/postgresql/data
+# Adicione outros serviços (Redis, etc.) aqui conforme o projeto precisar.
+volumes:
+  [SLUG_PROJETO]_pg_data:
